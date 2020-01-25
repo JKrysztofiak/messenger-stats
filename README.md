@@ -9,6 +9,9 @@ This script counts all messages and tells you how many msgs were sent by you and
 
 Both scripts give results as a standart output and a pie chart
 
+**avarageResponseTime.py**  
+Avarage response time by both users
+
 ![Preview](https://i.imgur.com/gfsOAO0.png)
 
 ![Preview 2](https://i.imgur.com/pVEse49.png)
