@@ -33,7 +33,7 @@ for file in os.listdir(dir):
         user = str(msg["sender_name"]).split(" ")[0]
         convoStats[user] += 1
         
-print(f"Conversations started: {number}")
+print(f"Messages sent: {number}")
 print(f"{user1}: {convoStats[user1]}")
 print(f"{user2}: {convoStats[user2]}")
 
