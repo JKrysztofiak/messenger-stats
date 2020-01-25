@@ -1,5 +1,6 @@
 import json
 import os
+import matplotlib.pyplot as plot
 
 #Iterating over all files in a dir
 dir = os.fsdecode('user/')
@@ -47,4 +48,17 @@ for file in os.listdir(dir):
 print(f"Conversations started: {number}")
 print(f"{user1}: {startOfConvoStats[user1]}")
 print(f"{user2}: {startOfConvoStats[user2]}")
+
+
+#Data visualisation
+
+labels = [user1, user2]
+sizers = [startOfConvoStats[user1],startOfConvoStats[user2]]
+colors = ['yellowgreen','lightskyblue']
+explode = (0.1, 0)
+
+plot.pie(sizers,explode=explode, labels=labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=140)
+
+plot.axis('equal')
+plot.show()
 
