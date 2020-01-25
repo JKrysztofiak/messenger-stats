@@ -9,6 +9,6 @@ A script counting how many times a particular person has started a Messenger con
 
 **How to run:**  
 
-Download your messenger history from Facebook and put all the JSON files of one coversation in new folder called "user"
+Download your messenger history from Facebook and put all the JSON files of one coversation in new folder called "user" in a direcotry with .py file
 
 (like user/message_1.json)
