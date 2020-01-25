@@ -1,5 +1,8 @@
 import json
+import os
 
+#Iterating over all files in a dir
+dir = os.fsdecode('user/')
 
 #Loading JSON
 with open('user/message_1.json') as file:
@@ -24,18 +27,21 @@ startOfConvoStats = {
     user2: 0
 }
 
+for file in os.listdir(dir):
+    with open('user/message_1.json') as file:
+        data = json.load(file)
 
-for msgNumber in range(0,len(data["messages"])-2):
-    if int(data["messages"][msgNumber]["timestamp_ms"])-int(data["messages"][msgNumber+1]["timestamp_ms"]) > timeDiff:
-        if int(data["messages"][msgNumber+1]["timestamp_ms"])-int(data["messages"][msgNumber+2]["timestamp_ms"]) < timeDiff:
-            message = "not a text"
-            if "content" in data["messages"][msgNumber]:
-                message = str(data["messages"][msgNumber]["content"])
-    
-            number += 1
-            startingParticipant = str(data["messages"][msgNumber]["sender_name"]).split(" ")[0]
-            startOfConvoStats[startingParticipant] += 1
-            # print(f'new convo {number} started by {startingParticipant} [Message: {message}]')
+    for msgNumber in range(0,len(data["messages"])-2):
+        if int(data["messages"][msgNumber]["timestamp_ms"])-int(data["messages"][msgNumber+1]["timestamp_ms"]) > timeDiff:
+            if int(data["messages"][msgNumber+1]["timestamp_ms"])-int(data["messages"][msgNumber+2]["timestamp_ms"]) < timeDiff:
+                message = "not a text"
+                if "content" in data["messages"][msgNumber]:
+                    message = str(data["messages"][msgNumber]["content"])
+        
+                number += 1
+                startingParticipant = str(data["messages"][msgNumber]["sender_name"]).split(" ")[0]
+                startOfConvoStats[startingParticipant] += 1
+                # print(f'new convo {number} started by {startingParticipant} [Message: {message}]')
             
         
 print(f"Conversations started: {number}")
