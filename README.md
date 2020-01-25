@@ -1,10 +1,10 @@
 # messenger-stats
 A bunch of scripts calculating stats of your messenger convos  
 
-**conversationStarter.py**
+**conversationStarter.py**  
 This script counts how many times a chosen person has started a Messenger conversation with you, and how many times you were the one starting.
 
-**messageStat.py**
+**messageStat.py**  
 This script counts all messages and tells you how many msgs have you sent and how many messages the other person sent to you.
 
 Both scripts give results as a standart output and a pie chart
